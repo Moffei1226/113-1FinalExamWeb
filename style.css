@@ -1,0 +1,108 @@
+/* Base styles for responsive scaling */
+html {
+    font-size: 16px; /* Default base size */
+}
+
+@media (min-width: 1600px) {
+    html {
+        font-size: 20px; /* Large screens */
+    }
+}
+
+@media (max-width: 1600px) {
+    html {
+        font-size: 12px; /* Tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 12px; /* Mobile */
+    }
+}
+
+/* General reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    width: 100%;
+    height: 100%;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffcc00;
+    padding: 20px;
+}
+
+header img {
+    height: 8em;
+    width: auto;
+    margin-top: -3em;
+    margin-bottom: -3em;
+}
+
+/* Navigation bar */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #e8e7d2;
+    padding: 1em 0;
+    flex-wrap: wrap;
+}
+
+nav a {
+    margin: 0 2em;
+    text-decoration: none;
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Main section with background image */
+main {
+    background-image: url("haikyuu-image.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: calc(100vh + 40px); /* Adjusted to exclude header/footer */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+}
+
+/* Footer styles */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8e7d2;
+    padding: 1em 0;
+}
+
+footer a {
+    margin: 0 1em;
+    display: inline-block;
+}
+
+footer img {
+    width: 2em;
+    height: 2em;
+    transition: transform 0.3s ease;
+}
+
+footer img:hover {
+    transform: scale(1.2);
+}

@@ -1,0 +1,47 @@
+// 獲取主球員照片和名字元素
+const mainPlayerImg = document.getElementById('mainPlayerImg');
+const mainPlayerName = document.getElementById('mainPlayerName');
+const mainPosition = document.getElementById('mainPosition');
+
+// 獲取所有縮略圖
+const thumbnails = document.querySelectorAll('.thumbnail');
+
+console.log("JavaScript 加載成功");
+
+// 為每個縮略圖添加點擊事件
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+        // 獲取縮略圖的 src 和名字
+        const newImgSrc = thumbnail.getAttribute('src');
+        const newName = thumbnail.getAttribute('data-name');
+        const newPosition = thumbnail.getAttribute('data-Position')
+
+        // 替換主球員照片和名字
+        mainPlayerImg.setAttribute('src', newImgSrc);
+        mainPlayerName.textContent = newName;
+        mainPosition.textContent = newPosition;
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburgerMenu = document.getElementById("hamburgerMenu");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+
+    hamburgerMenu.addEventListener("click", () => {
+        // 切換顯示或隱藏 dropdown-menu
+        dropdownMenu.classList.toggle("active");
+    });
+
+    // 為青葉城西高校選項添加點擊事件
+    const toTeams2 = document.getElementById("toTeams2");
+    toTeams2.addEventListener("click", (event) => {
+        event.preventDefault(); // 阻止默認的跳轉行為
+        window.location.href = "TEAMS2.html"; // 更新頁面至 TEAMS2.html
+    });
+
+    const toTeams1 = document.getElementById("toTeams1");
+    toTeams1.addEventListener("click", (event) => {
+        event.preventDefault(); // 阻止默認的跳轉行為
+        window.location.href = "TEAMS.html"; // 更新頁面至 TEAMS2.html
+    });
+});
